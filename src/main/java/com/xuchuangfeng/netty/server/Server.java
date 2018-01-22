@@ -35,7 +35,7 @@ public class Server {
             pipeline.addLast("helloHandler", new HelloHandler());
             return pipeline;
         });
-		bootstrap.bind(new InetSocketAddress(10101));
+		bootstrap.bind(new InetSocketAddress(10000));
 		System.out.println("start!!!");
 	}
 }
