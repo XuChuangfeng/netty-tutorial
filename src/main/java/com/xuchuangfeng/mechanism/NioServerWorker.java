@@ -30,7 +30,7 @@ public class NioServerWorker extends AbstractNioSelector implements Worker {
         }
         Iterator<SelectionKey> ite = this.selector.selectedKeys().iterator();
         while (ite.hasNext()) {
-            SelectionKey key = (SelectionKey) ite.next();
+            SelectionKey key = ite.next();
             // 移除，防止重复处理
             ite.remove();
 
@@ -56,7 +56,7 @@ public class NioServerWorker extends AbstractNioSelector implements Worker {
                 System.out.println("收到数据:" + new String(buffer.array()));
 
                 // 回写数据
-                ByteBuffer outBuffer = ByteBuffer.wrap("收到\n".getBytes());
+                ByteBuffer outBuffer = ByteBuffer.wrap("received\n".getBytes());
                 // 将消息回送给客户端
                 channel.write(outBuffer);
             }

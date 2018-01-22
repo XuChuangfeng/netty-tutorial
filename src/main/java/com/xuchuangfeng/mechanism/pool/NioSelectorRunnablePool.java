@@ -23,7 +23,6 @@ public class NioSelectorRunnablePool {
     private final AtomicInteger workerIndex = new AtomicInteger();
     private Worker[] workers;
 
-
     public NioSelectorRunnablePool(Executor boss, Executor worker) {
         initBoss(boss, 1);
         initWorker(worker, Runtime.getRuntime().availableProcessors() * 2);
