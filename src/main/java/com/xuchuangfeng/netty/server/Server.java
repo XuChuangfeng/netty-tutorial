@@ -16,26 +16,26 @@ import java.util.concurrent.Executors;
  */
 public class Server {
 
-	public static void main(String[] args) {
-		// 服务类
-		ServerBootstrap bootstrap = new ServerBootstrap();
-		
-		//boss线程监听端口，worker线程负责数据读写
-		ExecutorService boss = Executors.newCachedThreadPool();
-		ExecutorService worker = Executors.newCachedThreadPool();
-		
-		// 设置niosocket工厂
-		bootstrap.setFactory(new NioServerSocketChannelFactory(boss, worker));
-		
-		// 设置管道的工厂
-		bootstrap.setPipelineFactory(() -> {
+    public static void main(String[] args) {
+        // 服务类
+        ServerBootstrap bootstrap = new ServerBootstrap();
+
+        //boss线程监听端口，worker线程负责数据读写
+        ExecutorService boss = Executors.newCachedThreadPool();
+        ExecutorService worker = Executors.newCachedThreadPool();
+
+        // 设置niosocket工厂
+        bootstrap.setFactory(new NioServerSocketChannelFactory(boss, worker));
+
+        // 设置管道的工厂
+        bootstrap.setPipelineFactory(() -> {
             ChannelPipeline pipeline = Channels.pipeline();
             pipeline.addLast("decoder", new StringDecoder());
             pipeline.addLast("encoder", new StringEncoder());
             pipeline.addLast("helloHandler", new HelloHandler());
             return pipeline;
         });
-		bootstrap.bind(new InetSocketAddress(10000));
-		System.out.println("start!!!");
-	}
+        bootstrap.bind(new InetSocketAddress(10000));
+        System.out.println("start!!!");
+    }
 }

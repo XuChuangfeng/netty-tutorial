@@ -16,37 +16,37 @@ import java.util.concurrent.Executors;
  */
 public class Client {
 
-	public static void main(String[] args) {
-		
-		// 服务类
-		ClientBootstrap bootstrap = new  ClientBootstrap();
-		
-		// 线程池
-		ExecutorService boss = Executors.newCachedThreadPool();
-		ExecutorService worker = Executors.newCachedThreadPool();
-		
-		// socket工厂
-		bootstrap.setFactory(new NioClientSocketChannelFactory(boss, worker));
-		
-		// 管道工厂
-		bootstrap.setPipelineFactory(() -> {
+    public static void main(String[] args) {
+
+        // 服务类
+        ClientBootstrap bootstrap = new ClientBootstrap();
+
+        // 线程池
+        ExecutorService boss = Executors.newCachedThreadPool();
+        ExecutorService worker = Executors.newCachedThreadPool();
+
+        // socket工厂
+        bootstrap.setFactory(new NioClientSocketChannelFactory(boss, worker));
+
+        // 管道工厂
+        bootstrap.setPipelineFactory(() -> {
             ChannelPipeline pipeline = Channels.pipeline();
             pipeline.addLast("decoder", new StringDecoder());
             pipeline.addLast("encoder", new StringEncoder());
             pipeline.addLast("hiHandler", new HiHandler());
             return pipeline;
         });
-		
-		// 连接服务端
-		ChannelFuture connect = bootstrap.connect(new InetSocketAddress("127.0.0.1", 10000));
-		Channel channel = connect.getChannel();
-		
-		System.out.println("client start");
-		
-		Scanner scanner = new Scanner(System.in);
-		while(true){
-			System.out.println("请输入");
-			channel.write(scanner.next());
-		}
-	}
+
+        // 连接服务端
+        ChannelFuture connect = bootstrap.connect(new InetSocketAddress("127.0.0.1", 10000));
+        Channel channel = connect.getChannel();
+
+        System.out.println("client start");
+
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("请输入");
+            channel.write(scanner.next());
+        }
+    }
 }
