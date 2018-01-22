@@ -12,7 +12,7 @@ import java.util.Iterator;
 /**
  * @author XuChuangFeng
  */
-public class NIOServer {
+public class NioServer {
 	/**
 	 * 通道管理器
 	 */
@@ -123,7 +123,7 @@ public class NIOServer {
 	 * @throws IOException
 	 */
 	public static void main(String[] args) throws IOException {
-		NIOServer server = new NIOServer();
+		NioServer server = new NioServer();
 		server.initServer(8000);
 		server.listen();
 	}

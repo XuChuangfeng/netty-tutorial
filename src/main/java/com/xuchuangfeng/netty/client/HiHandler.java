@@ -16,11 +16,8 @@ public class HiHandler extends SimpleChannelHandler {
 	 */
 	@Override
 	public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
-
-		
 		String s = (String) e.getMessage();
 		System.out.println(s);
-		
 		super.messageReceived(ctx, e);
 	}
 
