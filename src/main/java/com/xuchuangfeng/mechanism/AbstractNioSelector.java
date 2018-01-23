@@ -32,7 +32,7 @@ public abstract class AbstractNioSelector implements Runnable {
     /**
      * 任务队列
      */
-    private final Queue<Runnable> taskQueue = new ConcurrentLinkedQueue<Runnable>();
+    private final Queue<Runnable> taskQueue = new ConcurrentLinkedQueue<>();
 
     /**
      * 线程名称
