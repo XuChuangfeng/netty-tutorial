@@ -16,9 +16,10 @@ public class HelloHandler extends SimpleChannelHandler {
      */
     @Override
     public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {
+        // 添加了StringDecoder之后，就可以接收字符串了
         String s = (String) e.getMessage();
         System.out.println(s);
-        // 回写数据
+        // 回写数据，在ChannelPipeline中添加了StringEncoder之后，就可以发送字符串了，因为netty要用ChanelBuffer传送数据
         ctx.getChannel().write("hi");
         super.messageReceived(ctx, e);
     }

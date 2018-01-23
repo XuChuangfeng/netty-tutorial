@@ -30,7 +30,9 @@ public class Server {
         // 设置管道的工厂
         bootstrap.setPipelineFactory(() -> {
             ChannelPipeline pipeline = Channels.pipeline();
+            // 支持接收到数据直接封装成String，UpStreamHandler对上行数据做处理
             pipeline.addLast("decoder", new StringDecoder());
+            // 支持回写数据的时候直接使用String，DownStreamHandler对下行数据做处理
             pipeline.addLast("encoder", new StringEncoder());
             pipeline.addLast("helloHandler", new HelloHandler());
             return pipeline;
