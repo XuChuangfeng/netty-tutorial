@@ -1,10 +1,6 @@
-package com.xuchuangfeng.netty.client;
+package com.xuchuangfeng.netty3.client;
 
-import org.jboss.netty.channel.ChannelHandlerContext;
-import org.jboss.netty.channel.ChannelStateEvent;
-import org.jboss.netty.channel.ExceptionEvent;
-import org.jboss.netty.channel.MessageEvent;
-import org.jboss.netty.channel.SimpleChannelHandler;
+import org.jboss.netty.channel.*;
 
 /**
  * @author XuChuangFeng

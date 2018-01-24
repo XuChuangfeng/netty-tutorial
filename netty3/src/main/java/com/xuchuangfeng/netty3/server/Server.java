@@ -1,4 +1,4 @@
-package com.xuchuangfeng.netty.server;
+package com.xuchuangfeng.netty3.server;
 
 import org.jboss.netty.bootstrap.ServerBootstrap;
 import org.jboss.netty.channel.ChannelPipeline;
