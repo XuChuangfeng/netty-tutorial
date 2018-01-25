@@ -38,7 +38,7 @@ public class Server {
 					ch.pipeline().addLast(new ServerHandler());
 				}
 			});
-			
+
 			//netty3中对应设置如下
 			//bootstrap.setOption("backlog", 1024);
 			//bootstrap.setOption("tcpNoDelay", true);
