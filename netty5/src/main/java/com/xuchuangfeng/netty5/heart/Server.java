@@ -32,6 +32,7 @@ public class Server {
 			bootstrap.childHandler(new ChannelInitializer<Channel>() {
 				@Override
 				protected void initChannel(Channel ch) throws Exception {
+                    // netty5做了代码重构，不需要传入定时器，handleUpstream方法也没有了，但是有了替换
 					ch.pipeline().addLast(new IdleStateHandler(5, 5, 10));
 					ch.pipeline().addLast(new StringDecoder());
 					ch.pipeline().addLast(new StringEncoder());
