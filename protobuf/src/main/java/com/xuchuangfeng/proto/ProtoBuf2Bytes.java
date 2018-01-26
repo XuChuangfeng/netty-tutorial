@@ -6,6 +6,10 @@ import com.xuchuangfeng.proto.PlayerModule.PBPlayer.Builder;
 import java.util.Arrays;
 
 /**
+ * protocol buff是谷歌推出的一种序列化协议
+ * Java序列化协议也是一种协议，占用字节数是protocol buff的十几二十倍
+ * 两者的目的是，将对象序列化成字节数组，或者说是二进制数据
+ * protocol buff占用很少的字节数，java序列化包含太多的类信息，字段信息等等
  * @author XuChuangFeng
  */
 public class ProtoBuf2Bytes {
