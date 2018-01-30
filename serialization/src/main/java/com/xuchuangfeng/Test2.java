@@ -4,6 +4,8 @@ import java.nio.ByteBuffer;
 import java.util.Arrays;
 
 /**
+ * 使用java nio包的ByteBuffer进行序列化，无法动态扩容，而且占用较多字节数
+ *
  * @author XuChuangFeng
  */
 public class Test2 {

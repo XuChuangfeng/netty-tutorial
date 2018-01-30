@@ -6,6 +6,8 @@ import org.jboss.netty.buffer.ChannelBuffers;
 import java.util.Arrays;
 
 /**
+ * 使用netty的ChannelBuffer，可以实现动态扩容，不需要指定大小,但是占用的大小还是较多
+ *
  * @author XuChuangFeng
  */
 public class Test3 {
@@ -14,7 +16,6 @@ public class Test3 {
 
         ChannelBuffer buffer = ChannelBuffers.dynamicBuffer();
         buffer.writeInt(101);
-        buffer.writeDouble(80.1);
 
         byte[] bytes = new byte[buffer.writerIndex()];
         buffer.readBytes(bytes);

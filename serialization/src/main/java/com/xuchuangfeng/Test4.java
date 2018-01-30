@@ -3,6 +3,8 @@ package com.xuchuangfeng;
 import java.util.Arrays;
 
 /**
+ * 使用自定义的序列化抽象类，可以使得占用的字节数降低很多，并且动态扩容
+ *
  * @author XuChuangFeng
  */
 public class Test4 {

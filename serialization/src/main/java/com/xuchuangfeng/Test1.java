@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
+ * 使用java原生序列化，通过IO实现，占用比较多字节
+ *
  * @author XuChuangFeng
  */
 public class Test1 {
