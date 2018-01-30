@@ -1,6 +1,4 @@
-package com.xuchuangfeng;
-
-import com.xuchuangfeng.core.Serializer;
+package com.xuchuangfeng.core;
 
 /**
  * @author XuChuangFeng

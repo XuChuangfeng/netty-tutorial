@@ -1,6 +1,4 @@
-package com.xuchuangfeng;
-
-import com.xuchuangfeng.core.Serializer;
+package com.xuchuangfeng.core;
 
 import java.util.ArrayList;
 import java.util.List;
