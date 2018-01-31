@@ -28,5 +28,8 @@
         <module>nio</module>
         <module>protobuf</module>
         <module>serialization</module>
+        <module>chat-netty3</module>
+        <module>chat-netty4</module>
+        <module>chat-protobuf</module>
     </modules>
 </project>
